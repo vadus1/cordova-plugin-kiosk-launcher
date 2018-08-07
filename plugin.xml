@@ -23,12 +23,12 @@
             </feature>
         </config-file>
 
-        <config-file file="AndroidManifest.xml" target="/manifest/application/activity[@android:label='@string/activity_name']" mode="merge">
+        <edit-config file="app/src/main/AndroidManifest.xml" target="/manifest/application/activity[@android:label='@string/activity_name']" mode="merge">
             <activity android:name="org.cordova.plugin.labs.kiosk.KioskActivity" android:keepScreenOn="true" android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
             </activity>
-        </config-file>
+        </edit-config>
 
-        <config-file target="AndroidManifest.xml" parent="/manifest/application/activity[@android:label='@string/activity_name']">
+        <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest/application/activity[@android:label='@string/activity_name']">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" /><!-- Handler of app icon (required to be launcher) -->
@@ -36,7 +36,7 @@
             </intent-filter>
         </config-file>
 
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest/application">
             <!-- autorun after the app APK is updated -->
             <receiver android:name="org.cordova.plugin.labs.kiosk.MyPackageReplacedEventReceiver">
                 <intent-filter>
@@ -45,7 +45,7 @@
             </receiver>
         </config-file>
 
-        <config-file target="AndroidManifest.xml" parent="/manifest">
+        <config-file target="app/src/main/AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.REORDER_TASKS"/>
         </config-file>
 
